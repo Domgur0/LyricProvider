@@ -43,7 +43,6 @@ open class MeizuProvider(
 
         onAppLifecycle {
             onCreate {
-                hookMedia()
                 hookNotify()
             }
         }
