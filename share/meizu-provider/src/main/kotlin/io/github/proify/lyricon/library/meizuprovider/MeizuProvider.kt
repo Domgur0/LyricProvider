@@ -87,6 +87,7 @@ open class MeizuProvider(
                                 provider.player.sendText(null)
                                 return@after
                             }
+                            provider.player.setPlaybackState(true)
                             provider.player.sendText(ticker)
                         }
                     }
