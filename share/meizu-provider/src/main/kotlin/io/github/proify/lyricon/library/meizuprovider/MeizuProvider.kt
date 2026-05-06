@@ -43,6 +43,7 @@ open class MeizuProvider(
 
         onAppLifecycle {
             onCreate {
+                hookMedia()
                 hookNotify()
             }
         }
@@ -57,7 +58,10 @@ open class MeizuProvider(
                     parameters(PlaybackState::class.java)
                 }.hook {
                     after {
-                        val state = (args[0] as PlaybackState)
+                        val state = (args[0] as? PlaybackState)
+                            ?: PlaybackState.Builder()
+                                .setState(PlaybackState.STATE_PLAYING, PlaybackState.PLAYBACK_POSITION_UNKNOWN, 1f)
+                                .build()
                         provider.player.setPlaybackState(state)
                     }
                 }
