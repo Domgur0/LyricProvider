@@ -1,4 +1,5 @@
 <!--suppress ALL -->
+#### 仅修改了meizuprovider，使其能获取没有播放的应用的ticker通知
 
 # LyricProvider - 歌词提供器
 
