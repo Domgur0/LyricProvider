@@ -99,6 +99,7 @@ open class MeizuProvider(
                                 return@after
                             }
                             //val lines = ticker.lines()
+                            provider.player.setPlaybackState(true)
                             provider.player.sendText(ticker)
                         }
                     }
